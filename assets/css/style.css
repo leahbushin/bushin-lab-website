@@ -285,7 +285,7 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
 .pi { display: grid; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
 @media (min-width: 880px) { .pi { grid-template-columns: minmax(0, 380px) minmax(0, 1fr); } }
 .portrait { position: relative; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); }
-.portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 22%; filter: grayscale(.15) contrast(1.02); transition: filter .6s var(--ease), transform 1s var(--ease); }
+.portrait img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: center 22%; filter: grayscale(.15) contrast(1.02); transition: filter .6s var(--ease), transform 1s var(--ease); }
 .portrait:hover img { filter: none; transform: scale(1.03); }
 .portrait figcaption {
   position: absolute; inset: auto 0 0 0; padding: 1rem 1.1rem;
@@ -378,3 +378,100 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: var(--gut); top: .75rem; z-index: 300; background: var(--fg); color: var(--bg); padding: .6rem 1rem; border-radius: 6px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* ==========================================================================
+   People page
+   ========================================================================== */
+
+.page-head { padding-block: clamp(7rem, 14vw, 11rem) clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden; }
+.page-head::before {
+  content: ""; position: absolute; top: -40%; right: -10%; width: 60vw; height: 60vw; pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--amber) 12%, transparent), transparent 62%);
+}
+.page-head > * { position: relative; }
+.page-head h1 {
+  font-family: var(--ff-display); font-weight: 400;
+  font-size: clamp(2.7rem, 7.5vw, 6rem); line-height: .97; letter-spacing: -.03em; max-width: 20ch;
+}
+
+/* --- roster group --- */
+.group + .group { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.group-head {
+  display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--line); margin-bottom: 2.5rem;
+}
+.group-head h2 {
+  font-family: var(--ff-mono); font-size: .74rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--fg); font-weight: 500;
+}
+.group-head .n { font-family: var(--ff-mono); font-size: .68rem; color: var(--accent); letter-spacing: .1em; }
+
+/* Discrete bordered cards rather than a hairline grid: groups have uneven
+   member counts, and empty cells in a shared-background grid read as gaps. */
+.people-grid { display: grid; gap: 1rem; align-items: stretch; }
+@media (min-width: 760px)  { .people-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1120px) { .people-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+.person {
+  background: var(--bg-elev); padding: clamp(1.5rem, 2.6vw, 2.1rem);
+  border: 1px solid var(--line); border-radius: var(--r);
+  display: flex; flex-direction: column; position: relative; overflow: hidden;
+  transition: background .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease);
+}
+.person::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(360px 220px at 50% -10%, color-mix(in srgb, var(--c, var(--amber)) 12%, transparent), transparent 70%);
+  transition: opacity .45s var(--ease);
+}
+.person:hover {
+  background: var(--bg-elev-2);
+  border-color: color-mix(in srgb, var(--c, var(--amber)) 45%, var(--line));
+  transform: translateY(-3px);
+}
+.person:hover::before { opacity: 1; }
+
+.avatar {
+  width: 62px; height: 62px; flex: none; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--ff-mono); font-size: 1.05rem; font-weight: 500; letter-spacing: .04em;
+  color: #0b0b0d;
+  background: linear-gradient(135deg, var(--c, var(--amber)), color-mix(in srgb, var(--c, var(--amber)) 45%, var(--ember)));
+  transition: transform .5s var(--ease);
+}
+.person:hover .avatar { transform: scale(1.06) rotate(-4deg); }
+html[data-theme="light"] .avatar { color: #fff; }
+
+.person-top { display: flex; align-items: center; gap: 1.1rem; }
+.person h3 { font-family: var(--ff-display); font-weight: 400; font-size: 1.45rem; letter-spacing: -.02em; line-height: 1.1; }
+.person .role {
+  display: block; margin-top: .35rem;
+  font-family: var(--ff-mono); font-size: .63rem; letter-spacing: .15em; text-transform: uppercase; color: var(--c, var(--amber));
+}
+.person .edu {
+  margin-top: 1.3rem; padding-top: 1.1rem; border-top: 1px solid var(--line-strong);
+  font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .05em; color: var(--fg-dim); line-height: 1.7;
+}
+.person p { margin-top: 1rem; color: var(--fg-muted); font-size: .93rem; line-height: 1.6; }
+.person .links { margin-top: auto; padding-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.person .links a {
+  font-family: var(--ff-mono); font-size: .6rem; letter-spacing: .11em; text-transform: uppercase;
+  padding: .3rem .65rem; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--fg-dim);
+  transition: .25s var(--ease);
+}
+.person .links a:hover { color: var(--fg); border-color: color-mix(in srgb, var(--c, var(--amber)) 60%, transparent); }
+.person .pending {
+  margin-top: auto; padding-top: 1.5rem;
+  font-family: var(--ff-mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--fg-dim);
+}
+
+/* --- PI banner on the people page --- */
+.pi-banner { display: grid; gap: clamp(1.75rem, 4vw, 3.5rem); align-items: center; }
+@media (min-width: 820px) { .pi-banner { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); } }
+.pi-banner .portrait img { aspect-ratio: 1/1; }
+
+/* --- lab-culture strip --- */
+.values { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-top: 3rem; }
+@media (min-width: 820px) { .values { grid-template-columns: repeat(3, 1fr); } }
+.value { background: var(--bg-elev); padding: 1.6rem; }
+.value h3 { font-family: var(--ff-mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.value p { margin-top: .8rem; color: var(--fg-muted); font-size: .92rem; }
