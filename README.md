@@ -19,11 +19,11 @@ assets/img/             portraits
 ## Design notes
 
 - **Palette** is derived from xanthommatin, the ommochrome pigment the lab taught a microbe
-  to make: amber (oxidized) → ember (reduced) → Stanford cardinal, with a `[4Fe–4S]` cyan
-  accent for the radical SAM work.
+  to make: amber (oxidized) → ember (reduced) → Stanford cardinal, with a cool cyan as
+  the fourth accent.
 - **Hero canvas** (`#lattice`) is a living biosynthetic network — nodes drift, transient bonds
-  form within range, and "radical" walkers traverse the lattice leaving decaying crosslinks
-  behind, a nod to radical SAM peptide macrocyclization. It respects
+  form within range, and reactive-intermediate walkers traverse the lattice leaving decaying
+  crosslinks behind — biosynthesis, abstracted. It respects
   `prefers-reduced-motion` and pauses when the tab is hidden.
 - **Accessibility**: skip link, visible focus rings, semantic landmarks, `aria-current`
   scrollspy, reduced-motion fallbacks, AA contrast in both themes.

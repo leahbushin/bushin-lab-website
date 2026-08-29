@@ -17,7 +17,7 @@
   --amber:         #ffb228;   /* oxidized xanthommatin */
   --ember:         #ff5f3d;   /* reduced form */
   --cardinal:      #b1040e;   /* Stanford */
-  --cyan:          #4fd1c5;   /* [4Fe-4S] cluster accent */
+  --cyan:          #4fd1c5;   /* cofactor-blue accent */
   --violet:        #8b5cf6;
 
   --accent:        var(--amber);

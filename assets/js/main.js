@@ -138,8 +138,8 @@
 
   /* ------------------------------------------------------- hero lattice
      A living biosynthetic network: nodes drift, bonds form when they come
-     within range, and occasionally a "radical" walks the lattice and leaves
-     a crosslink behind — a nod to radical SAM peptide cyclization.        */
+     within range, and occasionally a reactive intermediate walks the lattice and
+     leaves a crosslink behind — biosynthesis, abstracted.                 */
   var cv = document.getElementById('lattice');
   if (cv && !reduced) {
     var ctx = cv.getContext('2d');
