@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bushin Lab — Chemical Biology &amp; Biosynthesis · Stanford Chemistry</title>
+<meta name="description" content="The Bushin Lab at Stanford Chemistry discovers, decodes, and re-engineers nature's chemistry — radical SAM enzymes, RiPP natural products, and growth-coupled microbial bioproduction — for human health and environmental sustainability.">
+<meta name="author" content="Bushin Lab, Stanford University">
+<link rel="canonical" href="https://yeatmanlab.github.io/bushin-lab-website/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bushin Lab · Stanford Chemistry">
+<meta property="og:description" content="We discover nature's hidden chemistry and rebuild it in microbes — enzymes, natural products, and bioproduction at scale.">
+<meta property="og:image" content="assets/img/leah-bushin.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ffb228'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23ff5f3d' stroke-width='2'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "Bushin Lab",
+  "parentOrganization": { "@type": "CollegeOrUniversity", "name": "Stanford University" },
+  "department": "Department of Chemistry",
+  "url": "https://yeatmanlab.github.io/bushin-lab-website/",
+  "employee": {
+    "@type": "Person",
+    "name": "Leah B. Bushin",
+    "jobTitle": "Assistant Professor of Chemistry",
+    "affiliation": "Stanford University",
+    "url": "https://chemistry.stanford.edu/people/leah-b-bushin"
+  }
+}
+</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================================================ NAV -->
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
+      <circle cx="16" cy="16" r="4.6" fill="var(--amber)"/>
+      <circle cx="16" cy="3" r="2" fill="var(--ember)"/>
+      <circle cx="27.3" cy="22.5" r="2" fill="var(--cyan)"/>
+      <circle cx="4.7" cy="22.5" r="2" fill="currentColor" opacity=".6"/>
+      <path d="M16 5v6.4M25.6 21.5l-5.5-3.2M6.4 21.5l5.5-3.2" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+    </svg>
+    <span><b>Bushin Lab</b> · Stanford Chemistry</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="#research">Research</a>
+    <a href="#pi">People</a>
+    <a href="#press">News</a>
+    <a href="#publications">Publications</a>
+    <a href="#join">Join</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div style="display:flex;gap:.5rem;align-items:center">
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle colour theme" title="Toggle light / dark">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2M12 20.5v2M22.5 12h-2M3.5 12h-2M19.4 4.6l-1.4 1.4M6 18l-1.4 1.4M19.4 19.4L18 18M6 6L4.6 4.6"/>
+      </svg>
+    </button>
+    <button class="icon-btn burger" aria-label="Menu" aria-expanded="false">
+      <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 17h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+<!-- =========================================================== HERO -->
+<section class="hero" id="top">
+  <canvas id="lattice" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow" style="animation:fade .8s .2s var(--ease) both">Department of Chemistry · Stanford University</p>
+    <h1>
+      <span class="line"><span>Nature already</span></span>
+      <span class="line"><span>invented the</span></span>
+      <span class="line"><span><em class="hl">chemistry.</em></span></span>
+      <span class="line"><span>We learn to run it.</span></span>
+    </h1>
+    <p class="lede">
+      The Bushin Lab works at the interface of primary and secondary metabolism — dissecting
+      the enzymes that build nature's most improbable molecules, then rewiring living cells
+      to make them at scale.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn--solid" href="#research">
+        Explore the science
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#join">We're recruiting</a>
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <span>Est. 2025 · Stanford, CA</span>
+    <span class="scroll-hint"><i></i> Scroll</span>
+    <span>Lat 37.4275° N · Lon 122.1697° W</span>
+  </div>
+</section>
+
+<!-- ======================================================= MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Radical SAM enzymes</span><span>RiPP natural products</span><span>Growth-coupled bioproduction</span>
+    <span>Metabolic engineering</span><span>High-throughput enzyme discovery</span><span>Ommochrome pigments</span>
+    <span>Peptide macrocyclization</span><span>Microbiome chemistry</span>
+    <span>Radical SAM enzymes</span><span>RiPP natural products</span><span>Growth-coupled bioproduction</span>
+    <span>Metabolic engineering</span><span>High-throughput enzyme discovery</span><span>Ommochrome pigments</span>
+    <span>Peptide macrocyclization</span><span>Microbiome chemistry</span>
+  </div>
+</div>
+
+<!-- ======================================================= MISSION -->
+<section class="section" id="mission">
+  <div class="wrap">
+    <div class="mission-grid">
+      <div class="rv">
+        <p class="eyebrow">The premise</p>
+        <p class="big-statement">
+          Genome sequencing has revealed an immense reservoir of untapped biosynthetic
+          potential. <span class="dim">Most of it has never been expressed, never been
+          seen, and never been put to work.</span> Our job is to change that.
+        </p>
+      </div>
+      <div class="side-note rv" data-delay=".12">
+        <p>
+          We investigate novel metabolic pathways, enzymes, and bioactive molecules across all
+          kingdoms of life — with the intent to repurpose them against challenges in human health
+          and environmental sustainability.
+        </p>
+        <p>
+          That means working at two scales at once: dissecting the mechanism of a single enzyme,
+          while asking how resources are balanced across an entire cellular system. The pathway
+          and the physiology are the same problem.
+        </p>
+        <p>
+          We build bioproduction platforms — and in refining them, we deepen our fundamental
+          understanding of metabolism itself.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats rv" data-delay=".18">
+      <div class="stat">
+        <b><span data-count="1000">0</span><span class="u">×</span></b>
+        <small>Yield increase over prior routes to xanthommatin</small>
+      </div>
+      <div class="stat">
+        <b><span data-count="3">0</span><span class="u"> g/L</span></b>
+        <small>Pigment titer from engineered bacteria</small>
+      </div>
+      <div class="stat">
+        <b><span data-count="19">0</span></b>
+        <small>Peer-reviewed publications</small>
+      </div>
+      <div class="stat">
+        <b><span data-count="4">0</span></b>
+        <small>New enzymatic crosslinks discovered &amp; assigned</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ====================================================== RESEARCH -->
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Research programs</p>
+      <h2 class="display">Four questions,<br>one continuous loop.</h2>
+      <p class="lede" style="margin-top:1.5rem">
+        Discover the chemistry. Understand the enzyme. Rebuild the pathway in a host that
+        will actually cooperate. Then use what breaks to learn something new about the cell.
+      </p>
+    </div>
+
+    <div class="cards rv" data-delay=".1">
+      <article class="card" style="--c:var(--amber)">
+        <span class="card-num">01 / DISCOVERY</span>
+        <h3>Mining the unexpressed genome</h3>
+        <p>
+          Bacterial genomes encode far more biosynthetic machinery than they ever switch on.
+          We use bioinformatic mining, elicitor screening, and comparative metabolomics to
+          wake cryptic pathways up — and to find the molecules nobody has looked for because
+          nobody knew to look.
+        </p>
+        <div class="tags"><span class="tag">Genome mining</span><span class="tag">Cryptic metabolites</span><span class="tag">HiTES</span><span class="tag">Metabolomics</span></div>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20 10c0 20 60 20 60 40s-60 20-60 40"/><path d="M80 10c0 20-60 20-60 40s60 20 60 40"/>
+          <path d="M26 25h48M22 42h56M22 58h56M26 75h48"/>
+        </svg>
+      </article>
+
+      <article class="card" style="--c:var(--ember)">
+        <span class="card-num">02 / MECHANISM</span>
+        <h3>Radical enzymes, impossible bonds</h3>
+        <p>
+          Radical SAM enzymes forge bonds that synthetic chemistry struggles to reach:
+          Lys–Trp, Arg–Tyr, Trp–Arg, aliphatic ethers, β-thioethers. We determine the
+          structures these enzymes install, work out how they choose their targets, and
+          establish the rules for predicting new ones.
+        </p>
+        <div class="tags"><span class="tag">Radical SAM</span><span class="tag">[4Fe–4S]</span><span class="tag">RiPPs</span><span class="tag">NMR structure</span></div>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="35" cy="35" r="9"/><circle cx="65" cy="35" r="9"/><circle cx="35" cy="65" r="9"/><circle cx="65" cy="65" r="9"/>
+          <path d="M44 35h12M35 44v12M65 44v12M44 65h12M41 41l18 18M59 41L41 59"/>
+        </svg>
+      </article>
+
+      <article class="card" style="--c:var(--cyan)">
+        <span class="card-num">03 / ENGINEERING</span>
+        <h3>Growth-coupled bioproduction</h3>
+        <p>
+          The fastest way to make a microbe produce a molecule is to make its survival depend
+          on it. We design metabolic couplings that fuse a target pathway to central carbon
+          metabolism, then let selection do the optimization — an approach that took a
+          cephalopod pigment from milligrams to grams per liter.
+        </p>
+        <div class="tags"><span class="tag">Metabolic engineering</span><span class="tag">Selection design</span><span class="tag">Heterologous expression</span><span class="tag">Scale-up</span></div>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M50 8v18M50 74v18M8 50h18M74 50h18"/><circle cx="50" cy="50" r="24"/><circle cx="50" cy="50" r="10"/>
+          <path d="M31 31l8 8M69 31l-8 8M31 69l8-8M69 69l-8-8"/>
+        </svg>
+      </article>
+
+      <article class="card" style="--c:var(--violet)">
+        <span class="card-num">04 / EVOLUTION</span>
+        <h3>Enzymes on demand</h3>
+        <p>
+          We are building high-throughput platforms that pair growth-linked selections with
+          deep mutational scanning, so that an enzyme can be pushed toward a reaction chemistry
+          has always wanted but biology has never needed. New catalysts, chosen rather than designed.
+        </p>
+        <div class="tags"><span class="tag">Directed evolution</span><span class="tag">Biosensors</span><span class="tag">Biocatalysis</span><span class="tag">Synthetic derivatization</span></div>
+        <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M15 85L38 40l12 22 12-34 23 57"/><path d="M10 85h80"/><circle cx="38" cy="40" r="4"/><circle cx="62" cy="28" r="4"/>
+        </svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============================================================ PI -->
+<section class="section" id="pi">
+  <div class="wrap">
+    <p class="eyebrow rv">Principal investigator</p>
+    <div class="pi">
+      <figure class="portrait rv">
+        <img src="assets/img/leah-bushin.jpg" alt="Portrait of Professor Leah B. Bushin" width="900" height="1125" loading="lazy">
+        <figcaption>Leah B. Bushin · Photo: Jeff Dillon</figcaption>
+      </figure>
+
+      <div class="rv" data-delay=".1">
+        <h2 class="display" style="font-size:clamp(2.2rem,4.6vw,3.4rem)">Leah B. Bushin</h2>
+        <p class="mono" style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:.9rem">
+          Assistant Professor of Chemistry
+        </p>
+        <p class="lede" style="margin-top:1.5rem;font-size:1.05rem">
+          A chemical biologist and natural products chemist. Leah's work spans the discovery
+          and structural elucidation of radical SAM–modified peptides, the biosynthetic logic
+          of the human microbiome, and metabolic engineering strategies that make hard molecules
+          easy to produce.
+        </p>
+
+        <div class="quote">
+          <p>“I became fascinated by the pathways and enzymes that construct these molecules. As I spent more time in the field, I grew increasingly curious about how they fit into the broader metabolism of the cell.”</p>
+          <cite>— Leah Bushin, Stanford Chemistry, 2025</cite>
+        </div>
+
+        <ul class="cv">
+          <li><span class="yr">2025 –</span><span class="what">Assistant Professor of Chemistry<small>Stanford University · appointed September 1, 2025</small></span></li>
+          <li><span class="yr">2021 – 25</span><span class="what">NIH Ruth L. Kirschstein NRSA Postdoctoral Fellow<small>Scripps Institution of Oceanography, UC San Diego · Bradley S. Moore lab</small></span></li>
+          <li><span class="yr">2021</span><span class="what">Ph.D., Chemistry<small>Princeton University · Mohammad R. Seyedsayamdost lab</small></span></li>
+          <li><span class="yr">2017</span><span class="what">NSF Graduate Research Fellowship<small>Also: Hubert Alyea ’24 Teaching Award, Princeton</small></span></li>
+          <li><span class="yr">2014</span><span class="what">A.B., Chemistry<small>Princeton University</small></span></li>
+        </ul>
+
+        <div class="chips">
+          <a class="chip" href="https://chemistry.stanford.edu/people/leah-b-bushin" target="_blank" rel="noopener">Stanford Chemistry ↗</a>
+          <a class="chip" href="https://profiles.stanford.edu/leah-bushin" target="_blank" rel="noopener">Stanford Profile ↗</a>
+          <a class="chip" href="https://pubmed.ncbi.nlm.nih.gov/?term=Bushin+LB" target="_blank" rel="noopener">PubMed ↗</a>
+          <a class="chip" href="https://orcid.org/" target="_blank" rel="noopener">ORCID ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ========================================================= PRESS -->
+<section class="section" id="press">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">In the news</p>
+      <h2 class="display">The octopus<br>taught us a trick.</h2>
+    </div>
+
+    <div class="mission-grid" style="margin-top:3rem">
+      <div class="rv" data-delay=".08">
+        <p class="lede">
+          On <strong style="color:var(--fg)">November 3, 2025</strong>, <em class="hl">Nature Biotechnology</em>
+          published the lab's work — with Leah as lead author — on the first scalable
+          biosynthesis of <strong style="color:var(--fg)">xanthommatin</strong>, the ommochrome
+          pigment behind cephalopod camouflage.
+        </p>
+        <p style="margin-top:1.5rem;color:var(--fg-muted)">
+          Xanthommatin has fascinated chemists, materials scientists, and the U.S. Navy for
+          decades — and remained almost impossible to obtain. The team engineered a deliberately
+          "sick" bacterium that could only grow if it made the pigment, coupling xanthommatin
+          synthesis to formic acid production that fed cell growth. Survival did the optimization.
+        </p>
+        <p style="margin-top:1.2rem;color:var(--fg-muted)">
+          The result: <strong style="color:var(--fg)">1–3 grams per liter</strong>, against roughly
+          5 milligrams per liter by prior routes — a ~1,000-fold jump that moves xanthommatin
+          from a curiosity to a usable material for photoelectronic devices, thermal coatings,
+          color-changing paints, sunscreens, and sensors.
+        </p>
+        <div class="quote" style="margin-top:2rem">
+          <p>“It was one of my best days in the lab. When I came in the next morning and realized it worked — and it was producing a lot of pigment — I was thrilled.”</p>
+          <cite>— Leah Bushin, on the experiment that took a year to set up</cite>
+        </div>
+      </div>
+
+      <div class="side-note rv" data-delay=".16">
+        <h4 class="mono" style="font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);font-weight:400;margin-bottom:1.2rem">Coverage</h4>
+        <ul class="cv" style="margin-top:0;border-top:1px solid var(--line)">
+          <li><span class="yr">Paper</span><span class="what"><a href="https://www.nature.com/articles/s41587-025-02867-7" target="_blank" rel="noopener">Nature Biotechnology ↗</a><small>Growth-coupled microbial biosynthesis of the animal pigment xanthommatin</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://scripps.ucsd.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage" target="_blank" rel="noopener">Scripps Oceanography ↗</a><small>Scientists produce powerhouse pigment behind octopus camouflage</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://chemistry.stanford.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage" target="_blank" rel="noopener">Stanford Chemistry ↗</a><small>Department news</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://www.chemistryworld.com/news/bacteria-tweaked-to-produce-high-yields-of-colour-changing-pigment-behind-octopus-camouflage/4022660.article" target="_blank" rel="noopener">Chemistry World ↗</a><small>Bacteria tweaked to produce high yields of colour-changing pigment</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://www.sciencealert.com/scientists-recreate-rare-pigment-behind-octopus-superpowers" target="_blank" rel="noopener">ScienceAlert ↗</a><small>Scientists recreate rare pigment behind octopus 'superpowers'</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://www.sciencedaily.com/releases/2025/11/251103093001.htm" target="_blank" rel="noopener">ScienceDaily ↗</a><small>Scientists teach bacteria the octopus's secret to camouflage</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://phys.org/news/2025-11-scientists-powerhouse-pigment-octopus-camouflage.html" target="_blank" rel="noopener">Phys.org ↗</a><small>Syndicated coverage</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://www.universityofcalifornia.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage" target="_blank" rel="noopener">University of California ↗</a><small>Systemwide feature</small></span></li>
+          <li><span class="yr">2025</span><span class="what"><a href="https://chemistry.stanford.edu/news/stanford-welcomes-dr-leah-bushin-assistant-professor-chemistry" target="_blank" rel="noopener">Stanford welcomes Dr. Leah Bushin ↗</a><small>Faculty appointment announcement</small></span></li>
+        </ul>
+        <p style="margin-top:1.4rem;font-size:.85rem;color:var(--fg-dim)">
+          Funded by the NIH, the Office of Naval Research, the Swiss National Science Foundation,
+          and the Novo Nordisk Foundation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ================================================== PUBLICATIONS -->
+<section class="section" id="publications">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Selected &amp; complete works</p>
+      <h2 class="display">Publications</h2>
+      <p class="lede" style="margin-top:1.4rem">
+        <span id="pub-count" class="mono" style="color:var(--accent)">19</span> papers.
+        Filter by theme.
+      </p>
+    </div>
+
+    <div class="filters rv" data-delay=".06" role="group" aria-label="Filter publications by topic">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="rsam" aria-pressed="false">Radical SAM</button>
+      <button class="chip" data-filter="ripp" aria-pressed="false">RiPPs</button>
+      <button class="chip" data-filter="engineering" aria-pressed="false">Bioengineering</button>
+      <button class="chip" data-filter="discovery" aria-pressed="false">Discovery</button>
+      <button class="chip" data-filter="microbiome" aria-pressed="false">Microbiome</button>
+      <button class="chip" data-filter="first" aria-pressed="false">First author</button>
+    </div>
+
+    <ul class="pubs rv" data-delay=".1" id="pub-list">
+
+      <li class="pub" data-topics="engineering discovery first">
+        <span class="yr">2025</span>
+        <div>
+          <h4>Growth-coupled microbial biosynthesis of the animal pigment xanthommatin</h4>
+          <span class="authors"><b>Bushin LB</b>, Alter TB, Alván-Vargas MVG, Dürr L, Olson EC, Avila MJ, Volke DC, Puiggené Ò, Kim T, Deravi LF, Feist AM, Nikel PI, Moore BS</span>
+          <span class="jr top">Nature Biotechnology · 2025</span>
+        </div>
+        <a class="go" href="https://www.nature.com/articles/s41587-025-02867-7" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp">
+        <span class="yr">2024</span>
+        <div>
+          <h4>Expanding the Landscape of Noncanonical Amino Acids in RiPP Biosynthesis</h4>
+          <span class="authors">Johnson BA, Clark KA, <b>Bushin LB</b>, Spolar CN, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2024</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/?term=Expanding+the+Landscape+of+Noncanonical+Amino+Acids+in+RiPP+Biosynthesis" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp microbiome">
+        <span class="yr">2022</span>
+        <div>
+          <h4>RaS-RiPPs in Streptococci and the Human Microbiome</h4>
+          <span class="authors">Clark KA, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr">ACS Bio &amp; Med Chem Au · 2022</span>
+        </div>
+        <a class="go" href="https://pubs.acs.org/doi/10.1021/acsbiomedchemau.2c00004" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp discovery first">
+        <span class="yr">2022</span>
+        <div>
+          <h4>Bicyclostreptins are radical SAM enzyme-modified peptides with unique cyclization motifs</h4>
+          <span class="authors"><b>Bushin LB</b>, Covington BC, Clark KA, Caruso A, Seyedsayamdost MR</span>
+          <span class="jr top">Nature Chemical Biology · 2022 · 18, 1135–1143</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/35864332/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="ripp microbiome discovery">
+        <span class="yr">2021</span>
+        <div>
+          <h4>Quorum Sensing in <i>Streptococcus mutans</i> Regulates Production of Tryglysin, a Novel RaS-RiPP Antimicrobial Compound</h4>
+          <span class="authors">Rued BE, Covington BC, <b>Bushin LB</b>, Szewczyk G, Laczkovich I, Seyedsayamdost MR, Federle MJ</span>
+          <span class="jr">mBio · 2021</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/?term=Tryglysin+RaS-RiPP+mBio" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp microbiome discovery first">
+        <span class="yr">2020</span>
+        <div>
+          <h4>Discovery and Biosynthesis of Streptosactin, a Sactipeptide with an Alternative Topology Encoded by Commensal Bacteria in the Human Microbiome</h4>
+          <span class="authors"><b>Bushin LB</b>, Covington BC, Rued BE, Federle MJ, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2020</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/32786740/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp">
+        <span class="yr">2019</span>
+        <div>
+          <h4>Macrocyclization via an Arginine–Tyrosine Crosslink Broadens the Reaction Scope of Radical S-Adenosylmethionine Enzymes</h4>
+          <span class="authors">Caruso A, Martinie RJ, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2019</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/31625737/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="ripp">
+        <span class="yr">2019</span>
+        <div>
+          <h4>Total Synthesis and Stereochemical Assignment of Streptide</h4>
+          <span class="authors">Isley NA, Endo Y, Wu ZC, Covington BC, <b>Bushin LB</b>, Seyedsayamdost MR, Boger DL</span>
+          <span class="jr">J. Am. Chem. Soc. · 2019</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/31449411/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp discovery">
+        <span class="yr">2019</span>
+        <div>
+          <h4>Aliphatic Ether Bond Formation Expands the Scope of Radical SAM Enzymes in Natural Product Biosynthesis</h4>
+          <span class="authors">Clark KA, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2019</span>
+        </div>
+        <a class="go" href="https://pubs.acs.org/doi/10.1021/jacs.9b04705" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="discovery engineering">
+        <span class="yr">2019</span>
+        <div>
+          <h4>A genetics-free method for high-throughput discovery of cryptic microbial metabolites</h4>
+          <span class="authors">Xu F, Wu Y, Zhang C, Davis KM, Moon K, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr top">Nature Chemical Biology · 2019</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/30559427/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp">
+        <span class="yr">2019</span>
+        <div>
+          <h4>Radical Approach to Enzymatic β-Thioether Bond Formation</h4>
+          <span class="authors">Caruso A, <b>Bushin LB</b>, Clark KA, Martinie RJ, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2019</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/30525563/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp discovery microbiome first">
+        <span class="yr">2018</span>
+        <div>
+          <h4>Charting an Unexplored Streptococcal Biosynthetic Landscape Reveals a Unique Peptide Cyclization Motif</h4>
+          <span class="authors"><b>Bushin LB</b>, Clark KA, Pelczer I, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2018 · 140, 17674–17684</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/30398325/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp first">
+        <span class="yr">2018</span>
+        <div>
+          <h4>Guidelines for Determining the Structures of Radical SAM Enzyme-Catalyzed Modifications in the Biosynthesis of RiPP Natural Products</h4>
+          <span class="authors"><b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr">Methods in Enzymology · 2018</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/30097102/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="discovery">
+        <span class="yr">2017</span>
+        <div>
+          <h4>Discovery of a Cryptic Antifungal Compound from <i>Streptomyces albus</i> J1074 Using High-Throughput Elicitor Screens</h4>
+          <span class="authors">Xu F, Nazari B, Moon K, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr">J. Am. Chem. Soc. · 2017</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/28763199/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="discovery">
+        <span class="yr">2017</span>
+        <div>
+          <h4>Discovery of <i>scmR</i> as a global regulator of secondary metabolism and virulence in <i>Burkholderia thailandensis</i> E264</h4>
+          <span class="authors">Mao D, <b>Bushin LB</b>, Moon K, Wu Y, Seyedsayamdost MR</span>
+          <span class="jr">PNAS · 2017</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/28193893/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="ripp microbiome discovery">
+        <span class="yr">2017</span>
+        <div>
+          <h4>Acinetodin and Klebsidin, RNA Polymerase Targeting Lasso Peptides Produced by Human Isolates of <i>Acinetobacter gyllenbergii</i> and <i>Klebsiella pneumoniae</i></h4>
+          <span class="authors">Metelev M, Arseniev A, <b>Bushin LB</b>, Kuznedelov K, Artamonova TO, Kondratenko R, Khodorkovskii M, Seyedsayamdost MR, Severinov K</span>
+          <span class="jr">ACS Chem. Biol. · 2017</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/28075551/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="discovery">
+        <span class="yr">2016</span>
+        <div>
+          <h4>Mapping the Trimethoprim-Induced Secondary Metabolome of <i>Burkholderia thailandensis</i></h4>
+          <span class="authors">Okada BK, Wu Y, Mao D, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr">ACS Chem. Biol. · 2016</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/27541336/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="rsam ripp discovery">
+        <span class="yr">2015</span>
+        <div>
+          <h4>Structure and biosynthesis of a macrocyclic peptide containing an unprecedented lysine-to-tryptophan crosslink</h4>
+          <span class="authors">Schramma KR, <b>Bushin LB</b>, Seyedsayamdost MR</span>
+          <span class="jr top">Nature Chemistry · 2015</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/25901822/" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+      <li class="pub" data-topics="ripp microbiome">
+        <span class="yr">2021</span>
+        <div>
+          <h4>Erratum for Rued et al., “Quorum Sensing in <i>Streptococcus mutans</i> Regulates Production of Tryglysin”</h4>
+          <span class="authors">Rued BE, Covington BC, <b>Bushin LB</b>, Szewczyk G, Laczkovich I, Seyedsayamdost MR, Federle MJ</span>
+          <span class="jr">mBio · 2021</span>
+        </div>
+        <a class="go" href="https://pubmed.ncbi.nlm.nih.gov/?term=Erratum+Rued+Tryglysin" target="_blank" rel="noopener">Read ↗</a>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ========================================================== JOIN -->
+<section class="section join" id="join">
+  <div class="wrap">
+    <div class="join-inner rv">
+      <p class="eyebrow">Open positions</p>
+      <h2 class="display">The group is<br>being built now.</h2>
+      <p class="lede" style="margin-top:1.5rem">
+        We have the first experiments mapped out — and from there we follow where the science
+        leads. If you want to shape a research program rather than inherit one, this is the
+        moment. We are actively recruiting at every level.
+      </p>
+
+      <div class="roles">
+        <div class="role">
+          <span class="status">Recruiting</span>
+          <h3>Graduate students</h3>
+          <p>Apply to Stanford Chemistry, or to Chemical &amp; Systems Biology, Biophysics, or ChEM-H affiliated programs. Rotation students are welcome — email before you rotate.</p>
+        </div>
+        <div class="role">
+          <span class="status">Recruiting</span>
+          <h3>Postdoctoral scholars</h3>
+          <p>Backgrounds in enzymology, natural products, metabolic engineering, analytical chemistry, or microbiology. Send a CV, a short statement of interests, and three references.</p>
+        </div>
+        <div class="role">
+          <span class="status">Recruiting</span>
+          <h3>Undergraduates</h3>
+          <p>Stanford undergraduates interested in a multi-quarter project — including summer research — should get in touch with a note on what you'd like to learn.</p>
+        </div>
+      </div>
+
+      <div class="hero-cta" style="animation:none;opacity:1;margin-top:2.5rem">
+        <a class="btn btn--solid" href="#contact">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="https://chemistry.stanford.edu/academics/graduate-program" target="_blank" rel="noopener">Stanford Chemistry PhD ↗</a>
+      </div>
+
+      <p style="margin-top:2rem;font-size:.9rem;color:var(--fg-muted);max-width:60ch">
+        We are committed to a group where people from every background can do their best
+        science. Curiosity, rigor, and generosity toward colleagues are the only prerequisites
+        we treat as non-negotiable.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= CONTACT -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Bushin Lab</h4>
+        <p class="address">
+          Department of Chemistry<br>
+          Stanford University<br>
+          337 Campus Drive<br>
+          Stanford, CA 94305
+        </p>
+        <p style="margin-top:1.25rem">
+          <a class="mono" style="font-size:.8rem;letter-spacing:.04em;color:var(--accent)" href="https://chemistry.stanford.edu/people/leah-b-bushin" target="_blank" rel="noopener">
+            Contact via Stanford Chemistry ↗
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#pi">People</a></li>
+          <li><a href="#press">News &amp; press</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#join">Join the lab</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://chemistry.stanford.edu/" target="_blank" rel="noopener">Stanford Chemistry ↗</a></li>
+          <li><a href="https://profiles.stanford.edu/leah-bushin" target="_blank" rel="noopener">Stanford Profiles ↗</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Bushin+LB" target="_blank" rel="noopener">PubMed ↗</a></li>
+          <li><a href="https://sustainability.stanford.edu/" target="_blank" rel="noopener">Stanford Doerr School ↗</a></li>
+          <li><a href="https://chemh.stanford.edu/" target="_blank" rel="noopener">Stanford ChEM-H ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>© <span id="year">2026</span> Bushin Lab · Stanford University</span>
+      <span>Palette derived from xanthommatin</span>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
