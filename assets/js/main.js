@@ -41,11 +41,18 @@
       burger.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
     });
   }
+  function closeMenu() {
+    document.body.classList.remove('menu-open');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+  }
   document.querySelectorAll('.nav-links a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      document.body.classList.remove('menu-open');
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+      closeMenu();
+      if (burger) burger.focus();
+    }
   });
 
   /* --------------------------------------------------------- scrollspy */

@@ -121,6 +121,9 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
 .brand { display: flex; align-items: center; gap: .7rem; font-family: var(--ff-mono); font-size: .82rem; letter-spacing: .06em; }
 .brand b { font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .brand span { color: var(--fg-dim); }
+.brand .sfx { font-style: normal; }
+/* the department suffix wraps to a second line on narrow phones */
+@media (max-width: 430px) { .brand .sfx { display: none; } }
 .mark { width: 26px; height: 26px; flex: none; }
 .mark circle, .mark path, .mark line { vector-effect: non-scaling-stroke; }
 .nav-links { display: flex; align-items: center; gap: 1.6rem; }
@@ -149,11 +152,17 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
   .nav-links {
     position: fixed; inset: 0; flex-direction: column; justify-content: center;
     background: var(--bg); gap: 1.4rem;
-    transform: translateY(-100%); transition: transform .5s var(--ease);
+    padding: 5rem var(--gut) 2rem; overflow-y: auto;
+    /* visibility, not just transform: on short viewports the centred column
+       overflows the panel and would otherwise peek out while closed */
+    transform: translateY(-100%); visibility: hidden;
+    transition: transform .5s var(--ease), visibility .5s var(--ease);
   }
   .nav-links a { font-size: 1.05rem; }
-  body.menu-open .nav-links { transform: none; }
+  body.menu-open .nav-links { transform: none; visibility: visible; }
   .burger { display: grid; z-index: 2; }
+  /* keep the wordmark and theme toggle reachable above the open panel */
+  .brand, #theme-toggle { position: relative; z-index: 2; }
 }
 
 /* ---------- hero ---------- */
@@ -325,7 +334,7 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
 .pub[hidden] { display: none; }
 .pub .yr { font-family: var(--ff-mono); font-size: .78rem; color: var(--fg-dim); }
 .pub:hover .yr { color: var(--accent); }
-.pub h4 { font-weight: 500; font-size: 1.02rem; line-height: 1.35; letter-spacing: -.01em; }
+.pub h3 { font-weight: 500; font-size: 1.02rem; line-height: 1.35; letter-spacing: -.01em; }
 .pub .authors { display: block; margin-top: .45rem; color: var(--fg-dim); font-size: .85rem; line-height: 1.5; }
 .pub .authors b { color: var(--fg-muted); font-weight: 600; }
 .pub .jr { display: inline-block; margin-top: .55rem; font-family: var(--ff-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-muted); }

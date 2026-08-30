@@ -3,23 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
 <title>Bushin Lab — Chemical Biology &amp; Biosynthesis · Stanford Chemistry</title>
-<meta name="description" content="The Bushin Lab at Stanford Chemistry discovers, decodes, and re-engineers nature's chemistry — biosynthetic enzymes, peptide natural products, and growth-coupled microbial bioproduction — for human health and environmental sustainability.">
+<meta name="description" content="The Bushin Lab at Stanford Chemistry deploys synthetic and systems biology against the hard problems of chemistry: scalable production of complex molecules, genuinely selective biocatalysts, and late-stage functionalization.">
 <meta name="author" content="Bushin Lab, Stanford University">
 <link rel="canonical" href="https://yeatmanlab.github.io/bushin-lab-website/">
+<meta property="og:url" content="https://yeatmanlab.github.io/bushin-lab-website/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bushin Lab · Stanford Chemistry">
-<meta property="og:description" content="We discover nature's hidden chemistry and rebuild it in microbes — enzymes, natural products, and bioproduction at scale.">
-<meta property="og:image" content="assets/img/leah-bushin.jpg">
+<meta property="og:description" content="We deploy synthetic and systems biology against the hard problems of chemistry — scalable production, selective biocatalysts, late-stage functionalization.">
+<meta property="og:image" content="https://yeatmanlab.github.io/bushin-lab-website/assets/img/leah-bushin.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ffb228'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23ff5f3d' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%20fill='none'%3E%3Cpath%20d='M20.02%203.64%20A13.0%2013.0%200%200%201%2028.36%2020.02'%20stroke='%23ffb228'%20stroke-width='3.6'%20stroke-linecap='round'/%3E%3Cpath%20d='M26.24%2024.00%20A13.0%2013.0%200%200%201%206.34%2024.70'%20stroke='%23ff5f3d'%20stroke-width='3.6'%20stroke-linecap='round'/%3E%3Cpath%20d='M3.95%2020.87%20A13.0%2013.0%200%200%201%2011.13%203.95'%20stroke='%234fd1c5'%20stroke-width='3.6'%20stroke-linecap='round'/%3E%3Cpath%20d='M16%2011.4l4.1%202.3v4.6L16%2020.6l-4.1-2.3v-4.6z'%20fill='%23b1040e'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <script type="application/ld+json">
 {
@@ -47,14 +51,14 @@
 <nav class="nav" aria-label="Primary">
   <a class="brand" href="#top">
     <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
-      <circle cx="16" cy="16" r="4.6" fill="var(--amber)"/>
-      <circle cx="16" cy="3" r="2" fill="var(--ember)"/>
-      <circle cx="27.3" cy="22.5" r="2" fill="var(--cyan)"/>
-      <circle cx="4.7" cy="22.5" r="2" fill="currentColor" opacity=".6"/>
-      <path d="M16 5v6.4M25.6 21.5l-5.5-3.2M6.4 21.5l5.5-3.2" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+      <!-- plasmid backbone with three engineered cassettes, and the molecule it makes -->
+      <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1" opacity=".28"/>
+      <path d="M20.02 3.64 A13.0 13.0 0 0 1 28.36 20.02" stroke="var(--amber)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M26.24 24.00 A13.0 13.0 0 0 1 6.34 24.70" stroke="var(--ember)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M3.95 20.87 A13.0 13.0 0 0 1 11.13 3.95" stroke="var(--cyan)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M16 11.4l4.1 2.3v4.6L16 20.6l-4.1-2.3v-4.6z" fill="currentColor"/>
     </svg>
-    <span><b>Bushin Lab</b> · Stanford Chemistry</span>
+    <span><b>Bushin Lab</b><i class="sfx"> · Stanford Chemistry</i></span>
   </a>
 
   <div class="nav-links">
@@ -91,16 +95,16 @@
       <span class="line"><span>We learn to run it.</span></span>
     </h1>
     <p class="lede">
-      The Bushin Lab works at the interface of primary and secondary metabolism — dissecting
-      the enzymes that build nature's most improbable molecules, then rewiring living cells
-      to make them at scale.
+      We deploy synthetic and systems biology against the hard problems of chemistry —
+      the scalable production of complex molecules, genuinely selective biocatalysts,
+      and late-stage functionalization.
     </p>
     <div class="hero-cta">
       <a class="btn btn--solid" href="#research">
         Explore the science
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a class="btn btn--ghost" href="#join">We're recruiting</a>
+      <a class="btn btn--ghost" href="#join">We’re recruiting</a>
     </div>
   </div>
 
@@ -114,12 +118,12 @@
 <!-- ======================================================= MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Enzyme mechanism</span><span>RiPP natural products</span><span>Growth-coupled bioproduction</span>
-    <span>Metabolic engineering</span><span>High-throughput enzyme discovery</span><span>Ommochrome pigments</span>
-    <span>Peptide macrocyclization</span><span>Microbiome chemistry</span>
-    <span>Enzyme mechanism</span><span>RiPP natural products</span><span>Growth-coupled bioproduction</span>
-    <span>Metabolic engineering</span><span>High-throughput enzyme discovery</span><span>Ommochrome pigments</span>
-    <span>Peptide macrocyclization</span><span>Microbiome chemistry</span>
+    <span>Synthetic &amp; systems biology</span><span>Scalable bioproduction</span><span>Selective biocatalysis</span>
+    <span>Late-stage functionalization</span><span>Enzyme mechanism</span><span>Metabolic engineering</span>
+    <span>Genome mining</span><span>Ommochrome pigments</span>
+    <span>Synthetic &amp; systems biology</span><span>Scalable bioproduction</span><span>Selective biocatalysis</span>
+    <span>Late-stage functionalization</span><span>Enzyme mechanism</span><span>Metabolic engineering</span>
+    <span>Genome mining</span><span>Ommochrome pigments</span>
   </div>
 </div>
 
@@ -242,10 +246,10 @@
         <h3>Enzymes on demand</h3>
         <p>
           We are building high-throughput platforms that pair growth-linked selections with
-          deep mutational scanning, so that an enzyme can be pushed toward a reaction chemistry
+          deep mutational scanning, so that an enzyme can be pushed toward a reaction that chemistry
           has always wanted but biology has never needed. New catalysts, chosen rather than designed.
         </p>
-        <div class="tags"><span class="tag">Directed evolution</span><span class="tag">Biosensors</span><span class="tag">Biocatalysis</span><span class="tag">Synthetic derivatization</span></div>
+        <div class="tags"><span class="tag">Directed evolution</span><span class="tag">Biosensors</span><span class="tag">Biocatalysis</span><span class="tag">Late-stage functionalization</span></div>
         <svg class="glyph" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M15 85L38 40l12 22 12-34 23 57"/><path d="M10 85h80"/><circle cx="38" cy="40" r="4"/><circle cx="62" cy="28" r="4"/>
         </svg>
@@ -272,7 +276,7 @@
           Assistant Professor of Chemistry
         </p>
         <p class="lede" style="margin-top:1.5rem;font-size:1.05rem">
-          A chemical biologist and natural products chemist. Leah's work spans the discovery
+          A chemical biologist and natural products chemist. Leah’s work spans the discovery
           and structural elucidation of complex peptide natural products, the biosynthetic logic
           of the human microbiome, and metabolic engineering strategies that make hard molecules
           easy to produce.
@@ -285,9 +289,9 @@
 
         <ul class="cv">
           <li><span class="yr">2025 –</span><span class="what">Assistant Professor of Chemistry<small>Stanford University · appointed September 1, 2025</small></span></li>
-          <li><span class="yr">2021 – 25</span><span class="what">NIH Ruth L. Kirschstein NRSA Postdoctoral Fellow<small>Scripps Institution of Oceanography, UC San Diego · Bradley S. Moore lab</small></span></li>
+          <li><span class="yr">2021–25</span><span class="what">NIH Ruth L. Kirschstein NRSA Postdoctoral Fellow<small>Scripps Institution of Oceanography, UC San Diego · Bradley S. Moore lab</small></span></li>
           <li><span class="yr">2021</span><span class="what">Ph.D., Chemistry<small>Princeton University · Mohammad R. Seyedsayamdost lab</small></span></li>
-          <li><span class="yr">2017</span><span class="what">NSF Graduate Research Fellowship<small>Also: Hubert Alyea ’24 Teaching Award, Princeton</small></span></li>
+          <li><span class="yr">2017</span><span class="what">NSF Graduate Research Fellowship<small>Also that year: Hubert Alyea ’24 Teaching Award, Princeton</small></span></li>
           <li><span class="yr">2014</span><span class="what">A.B., Chemistry<small>Princeton University</small></span></li>
         </ul>
 
@@ -317,14 +321,14 @@
       <div class="rv" data-delay=".08">
         <p class="lede">
           On <strong style="color:var(--fg)">November 3, 2025</strong>, <em class="hl">Nature Biotechnology</em>
-          published the lab's work — with Leah as lead author — on a scalable microbial
+          published the lab’s work — with Leah as lead author — on a scalable microbial
           route to <strong style="color:var(--fg)">xanthommatin</strong>, the ommochrome
           pigment behind cephalopod camouflage.
         </p>
         <p style="margin-top:1.5rem;color:var(--fg-muted)">
           Xanthommatin has fascinated chemists, materials scientists, and the U.S. Navy for
           decades — and remained almost impossible to obtain. The team engineered a deliberately
-          "sick" bacterium that could only grow if it made the pigment, coupling xanthommatin
+          “sick” bacterium that could only grow if it made the pigment, coupling xanthommatin
           synthesis to formic acid production that fed cell growth. Survival did the optimization.
         </p>
         <p style="margin-top:1.2rem;color:var(--fg-muted)">
@@ -340,14 +344,14 @@
       </div>
 
       <div class="side-note rv" data-delay=".16">
-        <h4 class="mono" style="font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);font-weight:400;margin-bottom:1.2rem">Coverage</h4>
+        <h3 class="mono" style="font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);font-weight:400;margin-bottom:1.2rem">Coverage</h3>
         <ul class="cv" style="margin-top:0;border-top:1px solid var(--line)">
           <li><span class="yr">Paper</span><span class="what"><a href="https://www.nature.com/articles/s41587-025-02867-7" target="_blank" rel="noopener">Nature Biotechnology ↗</a><small>Growth-coupled microbial biosynthesis of the animal pigment xanthommatin</small></span></li>
           <li><span class="yr">Press</span><span class="what"><a href="https://scripps.ucsd.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage" target="_blank" rel="noopener">Scripps Oceanography ↗</a><small>Scientists produce powerhouse pigment behind octopus camouflage</small></span></li>
           <li><span class="yr">Press</span><span class="what"><a href="https://chemistry.stanford.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage" target="_blank" rel="noopener">Stanford Chemistry ↗</a><small>Department news</small></span></li>
           <li><span class="yr">Press</span><span class="what"><a href="https://www.chemistryworld.com/news/bacteria-tweaked-to-produce-high-yields-of-colour-changing-pigment-behind-octopus-camouflage/4022660.article" target="_blank" rel="noopener">Chemistry World ↗</a><small>Bacteria tweaked to produce high yields of colour-changing pigment</small></span></li>
-          <li><span class="yr">Press</span><span class="what"><a href="https://www.sciencealert.com/scientists-recreate-rare-pigment-behind-octopus-superpowers" target="_blank" rel="noopener">ScienceAlert ↗</a><small>Scientists recreate rare pigment behind octopus 'superpowers'</small></span></li>
-          <li><span class="yr">Press</span><span class="what"><a href="https://www.sciencedaily.com/releases/2025/11/251103093001.htm" target="_blank" rel="noopener">ScienceDaily ↗</a><small>Scientists teach bacteria the octopus's secret to camouflage</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://www.sciencealert.com/scientists-recreate-rare-pigment-behind-octopus-superpowers" target="_blank" rel="noopener">ScienceAlert ↗</a><small>Scientists recreate rare pigment behind octopus ‘superpowers’</small></span></li>
+          <li><span class="yr">Press</span><span class="what"><a href="https://www.sciencedaily.com/releases/2025/11/251103093001.htm" target="_blank" rel="noopener">ScienceDaily ↗</a><small>Scientists teach bacteria the octopus’s secret to camouflage</small></span></li>
           <li><span class="yr">Press</span><span class="what"><a href="https://phys.org/news/2025-11-scientists-powerhouse-pigment-octopus-camouflage.html" target="_blank" rel="noopener">Phys.org ↗</a><small>Syndicated coverage</small></span></li>
           <li><span class="yr">Press</span><span class="what"><a href="https://www.universityofcalifornia.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage" target="_blank" rel="noopener">University of California ↗</a><small>Systemwide feature</small></span></li>
           <li><span class="yr">2025</span><span class="what"><a href="https://chemistry.stanford.edu/news/stanford-welcomes-dr-leah-bushin-assistant-professor-chemistry" target="_blank" rel="noopener">Stanford welcomes Dr. Leah Bushin ↗</a><small>Faculty appointment announcement</small></span></li>
@@ -367,7 +371,7 @@
 <section class="section" id="publications">
   <div class="wrap">
     <div class="rv">
-      <p class="eyebrow">Selected &amp; complete works</p>
+      <p class="eyebrow">Peer-reviewed work</p>
       <h2 class="display">Publications</h2>
       <p class="lede" style="margin-top:1.4rem">
         <span id="pub-count" class="mono" style="color:var(--accent)">18</span> papers.
@@ -390,7 +394,7 @@
       <li class="pub" data-topics="engineering discovery first">
         <span class="yr">2025</span>
         <div>
-          <h4>Growth-coupled microbial biosynthesis of the animal pigment xanthommatin</h4>
+          <h3>Growth-coupled microbial biosynthesis of the animal pigment xanthommatin</h3>
           <span class="authors"><b>Bushin LB</b>, Alter TB, Alván-Vargas MVG, Dürr L, Olson EC, Avila MJ, Volke DC, Puiggené Ò, Kim T, Deravi LF, Feist AM, Nikel PI, Moore BS</span>
           <span class="jr top">Nature Biotechnology · 2025</span>
         </div>
@@ -400,7 +404,7 @@
       <li class="pub" data-topics="rsam ripp">
         <span class="yr">2024</span>
         <div>
-          <h4>Expanding the Landscape of Noncanonical Amino Acids in RiPP Biosynthesis</h4>
+          <h3>Expanding the Landscape of Noncanonical Amino Acids in RiPP Biosynthesis</h3>
           <span class="authors">Johnson BA, Clark KA, <b>Bushin LB</b>, Spolar CN, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2024 · 146, 3805–3815</span>
         </div>
@@ -410,7 +414,7 @@
       <li class="pub" data-topics="rsam ripp discovery first">
         <span class="yr">2022</span>
         <div>
-          <h4>Bicyclostreptins are radical SAM enzyme-modified peptides with unique cyclization motifs</h4>
+          <h3>Bicyclostreptins are radical SAM enzyme-modified peptides with unique cyclization motifs</h3>
           <span class="authors"><b>Bushin LB</b>, Covington BC, Clark KA, Caruso A, Seyedsayamdost MR</span>
           <span class="jr top">Nature Chemical Biology · 2022 · 18, 1135–1143</span>
         </div>
@@ -420,7 +424,7 @@
       <li class="pub" data-topics="rsam ripp microbiome">
         <span class="yr">2022</span>
         <div>
-          <h4>RaS-RiPPs in Streptococci and the Human Microbiome</h4>
+          <h3>RaS-RiPPs in Streptococci and the Human Microbiome</h3>
           <span class="authors">Clark KA, <b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr">ACS Bio &amp; Med Chem Au · 2022 · 2, 328–339</span>
         </div>
@@ -430,7 +434,7 @@
       <li class="pub" data-topics="ripp microbiome discovery">
         <span class="yr">2021</span>
         <div>
-          <h4>Quorum Sensing in <i>Streptococcus mutans</i> Regulates Production of Tryglysin, a Novel RaS-RiPP Antimicrobial Compound</h4>
+          <h3>Quorum Sensing in <i>Streptococcus mutans</i> Regulates Production of Tryglysin, a Novel RaS-RiPP Antimicrobial Compound</h3>
           <span class="authors">Rued BE, Covington BC, <b>Bushin LB</b>, Szewczyk G, Laczkovich I, Seyedsayamdost MR, Federle MJ</span>
           <span class="jr">mBio · 2021 · 12, e02688-20</span>
           <span class="jr" style="color:var(--fg-dim);margin-left:.85rem">Erratum: <a style="text-decoration:underline;text-underline-offset:2px" href="https://doi.org/10.1128/mBio.02560-21" target="_blank" rel="noopener">10.1128/mBio.02560-21</a></span>
@@ -441,7 +445,7 @@
       <li class="pub" data-topics="rsam ripp microbiome discovery first">
         <span class="yr">2020</span>
         <div>
-          <h4>Discovery and Biosynthesis of Streptosactin, a Sactipeptide with an Alternative Topology Encoded by Commensal Bacteria in the Human Microbiome</h4>
+          <h3>Discovery and Biosynthesis of Streptosactin, a Sactipeptide with an Alternative Topology Encoded by Commensal Bacteria in the Human Microbiome</h3>
           <span class="authors"><b>Bushin LB</b>, Covington BC, Rued BE, Federle MJ, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2020 · 142, 16265–16275</span>
         </div>
@@ -451,7 +455,7 @@
       <li class="pub" data-topics="ripp">
         <span class="yr">2019</span>
         <div>
-          <h4>Total Synthesis and Stereochemical Assignment of Streptide</h4>
+          <h3>Total Synthesis and Stereochemical Assignment of Streptide</h3>
           <span class="authors">Isley NA, Endo Y, Wu ZC, Covington BC, <b>Bushin LB</b>, Seyedsayamdost MR, Boger DL</span>
           <span class="jr">J. Am. Chem. Soc. · 2019 · 141, 17361–17369</span>
         </div>
@@ -461,7 +465,7 @@
       <li class="pub" data-topics="rsam ripp">
         <span class="yr">2019</span>
         <div>
-          <h4>Macrocyclization via an Arginine-Tyrosine Crosslink Broadens the Reaction Scope of Radical S-Adenosylmethionine Enzymes</h4>
+          <h3>Macrocyclization via an Arginine–Tyrosine Crosslink Broadens the Reaction Scope of Radical S-Adenosylmethionine Enzymes</h3>
           <span class="authors">Caruso A, Martinie RJ, <b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2019 · 141, 16610–16614</span>
         </div>
@@ -471,7 +475,7 @@
       <li class="pub" data-topics="rsam ripp discovery">
         <span class="yr">2019</span>
         <div>
-          <h4>Aliphatic Ether Bond Formation Expands the Scope of Radical SAM Enzymes in Natural Product Biosynthesis</h4>
+          <h3>Aliphatic Ether Bond Formation Expands the Scope of Radical SAM Enzymes in Natural Product Biosynthesis</h3>
           <span class="authors">Clark KA, <b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2019 · 141, 10610–10615</span>
         </div>
@@ -481,7 +485,7 @@
       <li class="pub" data-topics="discovery engineering">
         <span class="yr">2019</span>
         <div>
-          <h4>A genetics-free method for high-throughput discovery of cryptic microbial metabolites</h4>
+          <h3>A genetics-free method for high-throughput discovery of cryptic microbial metabolites</h3>
           <span class="authors">Xu F, Wu Y, Zhang C, Davis KM, Moon K, <b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr top">Nature Chemical Biology · 2019 · 15, 161–168</span>
         </div>
@@ -491,7 +495,7 @@
       <li class="pub" data-topics="rsam ripp">
         <span class="yr">2019</span>
         <div>
-          <h4>Radical Approach to Enzymatic β-Thioether Bond Formation</h4>
+          <h3>Radical Approach to Enzymatic β-Thioether Bond Formation</h3>
           <span class="authors">Caruso A, <b>Bushin LB</b>, Clark KA, Martinie RJ, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2019 · 141, 990–997</span>
         </div>
@@ -501,7 +505,7 @@
       <li class="pub" data-topics="rsam ripp discovery microbiome first">
         <span class="yr">2018</span>
         <div>
-          <h4>Charting an Unexplored Streptococcal Biosynthetic Landscape Reveals a Unique Peptide Cyclization Motif</h4>
+          <h3>Charting an Unexplored Streptococcal Biosynthetic Landscape Reveals a Unique Peptide Cyclization Motif</h3>
           <span class="authors"><b>Bushin LB</b>, Clark KA, Pelczer I, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2018 · 140, 17674–17684</span>
         </div>
@@ -511,7 +515,7 @@
       <li class="pub" data-topics="rsam ripp first">
         <span class="yr">2018</span>
         <div>
-          <h4>Guidelines for Determining the Structures of Radical SAM Enzyme-Catalyzed Modifications in the Biosynthesis of RiPP Natural Products</h4>
+          <h3>Guidelines for Determining the Structures of Radical SAM Enzyme-Catalyzed Modifications in the Biosynthesis of RiPP Natural Products</h3>
           <span class="authors"><b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr">Methods in Enzymology · 2018 · 606, 439–460</span>
         </div>
@@ -521,7 +525,7 @@
       <li class="pub" data-topics="discovery">
         <span class="yr">2017</span>
         <div>
-          <h4>Discovery of a Cryptic Antifungal Compound from <i>Streptomyces albus</i> J1074 Using High-Throughput Elicitor Screens</h4>
+          <h3>Discovery of a Cryptic Antifungal Compound from <i>Streptomyces albus</i> J1074 Using High-Throughput Elicitor Screens</h3>
           <span class="authors">Xu F, Nazari B, Moon K, <b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr">J. Am. Chem. Soc. · 2017 · 139, 9203–9212</span>
         </div>
@@ -531,7 +535,7 @@
       <li class="pub" data-topics="discovery">
         <span class="yr">2017</span>
         <div>
-          <h4>Discovery of <i>scmR</i> as a global regulator of secondary metabolism and virulence in <i>Burkholderia thailandensis</i> E264</h4>
+          <h3>Discovery of <i>scmR</i> as a global regulator of secondary metabolism and virulence in <i>Burkholderia thailandensis</i> E264</h3>
           <span class="authors">Mao D, <b>Bushin LB</b>, Moon K, Wu Y, Seyedsayamdost MR</span>
           <span class="jr">PNAS · 2017 · 114, E2920–E2928</span>
         </div>
@@ -541,7 +545,7 @@
       <li class="pub" data-topics="ripp microbiome discovery">
         <span class="yr">2017</span>
         <div>
-          <h4>Acinetodin and Klebsidin, RNA Polymerase Targeting Lasso Peptides Produced by Human Isolates of <i>Acinetobacter gyllenbergii</i> and <i>Klebsiella pneumoniae</i></h4>
+          <h3>Acinetodin and Klebsidin, RNA Polymerase Targeting Lasso Peptides Produced by Human Isolates of <i>Acinetobacter gyllenbergii</i> and <i>Klebsiella pneumoniae</i></h3>
           <span class="authors">Metelev M, Arseniev A, <b>Bushin LB</b>, Kuznedelov K, Artamonova TO, Kondratenko R, Khodorkovskii M, Seyedsayamdost MR, Severinov K</span>
           <span class="jr">ACS Chem. Biol. · 2017 · 12, 814–824</span>
         </div>
@@ -551,9 +555,9 @@
       <li class="pub" data-topics="discovery">
         <span class="yr">2016</span>
         <div>
-          <h4>Mapping the Trimethoprim-Induced Secondary Metabolome of <i>Burkholderia thailandensis</i></h4>
+          <h3>Mapping the Trimethoprim-Induced Secondary Metabolome of <i>Burkholderia thailandensis</i></h3>
           <span class="authors">Okada BK, Wu Y, Mao D, <b>Bushin LB</b>, Seyedsayamdost MR</span>
-          <span class="jr">ACS Chem. Biol. · 2016 · 11, 2124–30</span>
+          <span class="jr">ACS Chem. Biol. · 2016 · 11, 2124–2130</span>
         </div>
         <a class="go" href="https://doi.org/10.1021/acschembio.6b00447" target="_blank" rel="noopener">DOI ↗</a>
       </li>
@@ -561,7 +565,7 @@
       <li class="pub" data-topics="rsam ripp discovery">
         <span class="yr">2015</span>
         <div>
-          <h4>Structure and biosynthesis of a macrocyclic peptide containing an unprecedented lysine-to-tryptophan crosslink</h4>
+          <h3>Structure and biosynthesis of a macrocyclic peptide containing an unprecedented lysine-to-tryptophan crosslink</h3>
           <span class="authors">Schramma KR, <b>Bushin LB</b>, Seyedsayamdost MR</span>
           <span class="jr top">Nature Chemistry · 2015 · 7, 431–437</span>
         </div>
@@ -590,7 +594,7 @@
         <div class="role">
           <span class="status">Recruiting</span>
           <h3>Graduate students</h3>
-          <p>Apply to Stanford Chemistry, or to Chemical &amp; Systems Biology, Biophysics, or ChEM-H affiliated programs. Rotation students are welcome — email before you rotate.</p>
+          <p>Apply to the Stanford Chemistry Ph.D. program, or get in touch if you are in one of Stanford’s affiliated interdisciplinary programs. Rotation students are welcome — email before you rotate.</p>
         </div>
         <div class="role">
           <span class="status">Recruiting</span>
@@ -600,7 +604,7 @@
         <div class="role">
           <span class="status">Recruiting</span>
           <h3>Undergraduates</h3>
-          <p>Stanford undergraduates interested in a multi-quarter project — including summer research — should get in touch with a note on what you'd like to learn.</p>
+          <p>Stanford undergraduates interested in a multi-quarter project — including summer research — should get in touch with a note on what you’d like to learn.</p>
         </div>
       </div>
 
@@ -658,7 +662,6 @@
           <li><a href="https://profiles.stanford.edu/leah-bushin" target="_blank" rel="noopener">Stanford Profiles ↗</a></li>
           <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Bushin+LB" target="_blank" rel="noopener">PubMed ↗</a></li>
           <li><a href="https://orcid.org/0000-0003-0538-2469" target="_blank" rel="noopener">ORCID ↗</a></li>
-          <li><a href="https://sustainability.stanford.edu/" target="_blank" rel="noopener">Stanford Doerr School ↗</a></li>
           <li><a href="https://chemh.stanford.edu/" target="_blank" rel="noopener">Stanford ChEM-H ↗</a></li>
         </ul>
       </div>

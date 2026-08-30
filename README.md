@@ -9,7 +9,8 @@ Deliberately dependency-free: hand-written HTML, CSS, and vanilla JS. No build s
 framework, no bundler. Deploys to GitHub Pages straight from `main`.
 
 ```
-index.html              single-page site
+index.html              home: research, PI, press, publications, join
+people.html             "Meet the Bushin Lab" roster
 assets/css/style.css    design system (dark-first, light theme via [data-theme])
 assets/js/main.js       lattice canvas, reveals, publication filters, theme toggle
 assets/img/             portraits
@@ -18,6 +19,9 @@ assets/img/             portraits
 
 ## Design notes
 
+- **Logo** is a plasmid map: a thin backbone ring carrying three engineered cassettes
+  (amber, ember, cyan) around the hexagonal molecule they produce — synthetic biology on
+  the outside, chemistry in the middle. Five shapes, so it holds together at 20 px.
 - **Palette** is derived from xanthommatin, the ommochrome pigment the lab taught a microbe
   to make: amber (oxidized) → ember (reduced) → Stanford cardinal, with a cool cyan as
   the fourth accent.
