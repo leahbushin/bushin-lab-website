@@ -1,24 +1,32 @@
 # Bushin Lab — website
 
-Website for the [Bushin Lab](https://leahbushin.github.io/bushinlab-website/), Department of
+Website for the [Bushin Lab](https://leahbushin.github.io/bushinlab-website2/), Department of
 Chemistry, Stanford University. PI: **Leah B. Bushin**, Assistant Professor of Chemistry.
 
-- **Live:** <https://leahbushin.github.io/bushinlab-website/>
-- **Repo:** <https://github.com/leahbushin/bushinlab-website>
+- **Live:** <https://leahbushin.github.io/bushinlab-website2/>
+- **Repo:** <https://github.com/leahbushin/bushinlab-website2>
 - **Deploy:** GitHub Pages, `main` branch, root path. Push to `main` and it goes live in
   30–90 seconds. There is no CI, no build step, and no staging branch.
 
-> **First-time Pages setup.** The repo starts private, and GitHub Pages needs either a public
-> repo or a paid plan. Repo **admin** must, in Settings:
-> 1. **General → Danger Zone → Change visibility → Public**
-> 2. **Pages → Build and deployment → Source: Deploy from a branch → `main` / `/ (root)` → Save**
+> **First-time Pages setup.** The repo is already public, so only one step is left, and it
+> needs repo-**admin** rights (a collaborator with write access cannot do it):
 >
-> The site appears at <https://leahbushin.github.io/bushinlab-website/> within a couple of
-> minutes. Every canonical URL, `og:` tag and the JSON-LD block already point there. If the
-> repo is ever renamed, or a custom domain is added, update those — `grep -rn "leahbushin.github.io"`.
+> **Settings → Pages → Build and deployment → Source: "Deploy from a branch" →
+> branch `main`, folder `/ (root)` → Save**
 >
-> This repository was moved from `yeatmanlab/bushin-lab-website` with its full commit history
-> intact; that copy is the origin of commits `66d1cbe`–`957e8f1`.
+> `/ (root)` because `index.html` lives at the repository root; the only other option the
+> folder dropdown offers is `/docs`. "Deploy from a branch" rather than "GitHub Actions"
+> because there is no build step — GitHub serves these files exactly as committed, and every
+> push to `main` republishes automatically.
+>
+> The site then appears at <https://leahbushin.github.io/bushinlab-website2/>. Every canonical
+> URL, `og:` tag and the JSON-LD block already point there. If the repo is renamed or a custom
+> domain is added, update them — `grep -rn "leahbushin.github.io"`.
+>
+> Note that a Pages site is publicly visible even if the repository is later made private.
+>
+> History: this repo was built as `yeatmanlab/bushin-lab-website` (commits `66d1cbe`–`957e8f1`)
+> and moved here with that history intact.
 
 ---
 
