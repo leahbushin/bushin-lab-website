@@ -3,56 +3,297 @@
 Website for the [Bushin Lab](https://yeatmanlab.github.io/bushin-lab-website/), Department of
 Chemistry, Stanford University. PI: **Leah B. Bushin**, Assistant Professor of Chemistry.
 
-## Stack
+- **Live:** <https://yeatmanlab.github.io/bushin-lab-website/>
+- **Repo:** <https://github.com/yeatmanlab/bushin-lab-website>
+- **Deploy:** GitHub Pages, `main` branch, root path. Push to `main` and it goes live in
+  30–90 seconds. There is no CI, no build step, and no staging branch.
 
-Deliberately dependency-free: hand-written HTML, CSS, and vanilla JS. No build step, no
-framework, no bundler. Deploys to GitHub Pages straight from `main`.
+---
+
+## 1. What this is
+
+A two-page static site written by hand in HTML, CSS, and vanilla JS. **No framework, no
+bundler, no npm, no dependencies at all.** That is a deliberate choice: a lab site changes a
+few times a year, usually by someone who is not a front-end developer, and a toolchain that
+rots is worse than none. Everything here can be edited with a text editor and previewed by
+opening a file.
 
 ```
-index.html              home: research, PI, press, publications, join
+index.html              home: hero, mission, research, PI, press, publications, join, footer
 people.html             "Meet the Bushin Lab" roster
-assets/css/style.css    design system (dark-first, light theme via [data-theme])
-assets/js/main.js       lattice canvas, reveals, publication filters, theme toggle
+assets/css/style.css    the whole design system (~490 lines)
+assets/js/main.js       canvas, reveals, filters, theme, menu (~320 lines)
 assets/img/             portraits
-.nojekyll               serve files as-is
+.nojekyll               tells GitHub Pages to serve files as-is
+.claude/launch.json     local preview config for Claude Code's browser pane
 ```
 
-## Design notes
-
-- **Logo** is a plasmid map: a thin backbone ring carrying three engineered cassettes
-  (amber, ember, cyan) around the hexagonal molecule they produce — synthetic biology on
-  the outside, chemistry in the middle. Five shapes, so it holds together at 20 px.
-- **Palette** is derived from xanthommatin, the ommochrome pigment the lab taught a microbe
-  to make: amber (oxidized) → ember (reduced) → Stanford cardinal, with a cool cyan as
-  the fourth accent.
-- **Hero canvas** (`#lattice`) is a living biosynthetic network — nodes drift, transient bonds
-  form within range, and reactive-intermediate walkers traverse the lattice leaving decaying
-  crosslinks behind — biosynthesis, abstracted. It respects
-  `prefers-reduced-motion` and pauses when the tab is hidden.
-- **Accessibility**: skip link, visible focus rings, semantic landmarks, `aria-current`
-  scrollspy, reduced-motion fallbacks, AA contrast in both themes.
-
-## Local preview
+### Local preview
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Then <http://localhost:8000>. Hard-reload after editing CSS.
 
-## Editing content
+---
 
-Everything is in `index.html`. Publications live in `#pub-list` as `<li class="pub">` items;
-the `data-topics` attribute drives the filter chips (`rsam ripp engineering discovery
-microbiome first`). Add a topic to a paper and it appears under that chip automatically —
-the counter updates itself.
+## 2. Design system
 
-## Sources
+Read this before changing any visual detail. Almost everything is driven by custom properties
+at the top of `style.css`.
 
-Content is drawn from the [Stanford Chemistry faculty
-page](https://chemistry.stanford.edu/people/leah-b-bushin), the department's [welcome
-announcement](https://chemistry.stanford.edu/news/stanford-welcomes-dr-leah-bushin-assistant-professor-chemistry),
-the [Scripps press
-release](https://scripps.ucsd.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage)
-for the 2025 *Nature Biotechnology* xanthommatin paper, and PubMed for the publication list.
-Contact details and the group roster are placeholders pending confirmation from the lab.
+### Colour
+
+The palette is derived from **xanthommatin**, the ommochrome pigment the lab taught a microbe
+to make (their 2025 *Nature Biotechnology* paper). It is not decoration — it is the lab's own
+molecule:
+
+| Token | Dark | Light | Meaning |
+| --- | --- | --- | --- |
+| `--amber` | `#ffb228` | `#c9770a` | oxidized xanthommatin; primary accent |
+| `--ember` | `#ff5f3d` | `#d83f1c` | reduced form |
+| `--cardinal` | `#b1040e` | — | Stanford |
+| `--cyan` | `#4fd1c5` | `#0f8b80` | fourth accent, cool counterweight |
+| `--grad` | amber → ember → cardinal | | buttons, gradient text |
+
+**Dark is the default.** Light theme is a token override under `html[data-theme="light"]`,
+persisted to `localStorage` under `bushin-theme`. If you add a colour, add it to *both*
+blocks or it will break in one theme. Never hard-code a hex outside `:root`.
+
+### Type
+
+- `--ff-display` Instrument Serif — headlines only, always `font-weight: 400`
+- `--ff-sans` Inter — body
+- `--ff-mono` JetBrains Mono — labels, eyebrows, metadata, citations
+
+The mono uppercase label with wide letter-spacing (`.eyebrow`, `.card-num`, `.role`, `.tag`)
+is the signature of the design. Use it for anything metadata-like; use the serif for anything
+that should feel authored.
+
+### Logo
+
+`<svg class="mark">`, inline in the nav of both pages, plus a data-URI favicon in `<head>`.
+
+It is a **plasmid map**: a thin backbone ring carrying three engineered cassettes (amber,
+ember, cyan) around the hexagonal molecule they produce. Synthetic biology on the outside,
+chemistry in the middle. Five shapes total, which is what lets it survive at 20 px.
+
+Earlier attempts at a DNA double helix and a rod-shaped cell both collapsed into an
+indistinct X below ~40 px. If you revisit the mark, **check it at 20 px before anything
+else** — that is the size that actually ships. The arc path data was generated by a short
+Python snippet (angles 18–108°, 128–228°, 248–338° on r=13, centre 16,16); regenerate rather
+than hand-editing coordinates.
+
+### Motion
+
+- Hero canvas `#lattice` (`main.js`): drifting nodes, transient bonds within range, and
+  reactive-intermediate walkers that leave decaying crosslinks. Pointer-repelled, paused when
+  the tab is hidden, and **completely skipped** under `prefers-reduced-motion`.
+- `.rv` elements fade up on scroll via `IntersectionObserver`; stagger with `data-delay`.
+- A global `prefers-reduced-motion` rule collapses every animation and transition to ~0s.
+- A `<noscript>` block forces `.rv` visible, so the site still reads with JS disabled.
+
+---
+
+## 3. Editing content
+
+### Publications — do not hand-write these
+
+**The publication list is generated from NCBI, on purpose.** An earlier hand-written version
+had 10 of 13 PubMed IDs pointing at the *wrong papers* — they resolved to real PubMed pages,
+just other people's articles. Nobody catches that by proofreading.
+
+To regenerate after a new paper:
+
+```bash
+curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=Bushin+LB%5BAuthor%5D&retmax=100&retmode=json" -o /tmp/ids.json
+```
+
+Then pull `esummary` for those IDs and rebuild each `<li class="pub">` from the returned
+`title`, `authors`, `source`, `volume`, `pages`, and the `doi` article-id. Links must use
+`https://doi.org/<doi>`, never a hand-typed PubMed ID. Keep `<b>Bushin LB</b>` bolded in the
+author string.
+
+Per-entry conventions:
+
+- `data-topics` drives the filter chips: `rsam ripp engineering discovery microbiome first`.
+  Add a topic and the paper joins that chip automatically; the counter is computed at runtime.
+- `<span class="jr top">` adds the amber highlight. It currently marks the four Nature-family
+  papers **and nothing else**, because the stats block claims "4 papers in the Nature family
+  of journals" — a reader counting amber entries must get 4. If you highlight another journal,
+  fix that stat too.
+- Errata are folded into the paper they correct as an inline note, not listed separately.
+
+### The stats block
+
+Every number in `.stats` must be checkable against a cited source:
+
+| Number | Source |
+| --- | --- |
+| 1000× | Scripps press release, "up to 1,000 times" — labelled as a *peak* |
+| 3 g/L | *Nature Biotechnology* 2025, 1–3 g/L |
+| 18 | PubMed record count, minus the erratum |
+| 4 | Nature-family papers, must match the amber-highlighted entries |
+
+An earlier draft had an invented "4 new enzymatic crosslinks" figure. Don't add a stat you
+cannot point at a source for.
+
+### People (`people.html`)
+
+Cards are plain HTML. To add someone, copy an existing `<article class="person">` and set:
+
+- `style="--c:var(--amber)"` — per-card accent, cycle amber / ember / violet / cyan
+- `.avatar` — initials. There are no member photos; monogram avatars are the intentional
+  solution, so don't add a photo for one person and leave the rest as initials.
+- `.edu` — degree line, `.links` — profile chips
+
+**Keep bios within roughly 400–460 characters.** Cards in a row stretch to match the tallest,
+so one long bio leaves visible voids in its neighbours. This was a real problem when one bio
+ran 40% longer than the others.
+
+### Rules that matter more than they look
+
+1. **Cite or omit.** Every biographical and numerical claim on this site traces to a public
+   source. Where nothing could be verified — Zheng Yang, Angela Rao — the card says
+   "Profile coming soon" rather than inventing plausible filler.
+2. **Pronouns only where a published profile establishes them.** Kyla's and Ace's come from
+   the Mercer and Berkeley Lab articles. Bailey's are unknown, so that bio is written to
+   avoid them entirely. Do not guess from a name.
+3. **Radical SAM stays out of current-research framing.** At Leah's request it appears only
+   in publication titles and the publications filter chip. It is not the lab's programme now.
+   Present research is framed by her own statement: synthetic and systems biology applied to
+   scalable production, selective biocatalysts, and late-stage functionalization.
+4. **Both footers must match.** They are duplicated across the two pages; edit both.
+
+---
+
+## 4. Known placeholders
+
+These need input from the lab and are the first things to fix:
+
+- **Email** — nowhere on the site. Both "contact" routes point at the Stanford Chemistry
+  faculty page. Add a real address to the footer of *both* pages and to the `#join` CTA.
+- **Building and room** — only the department mail address (337 Campus Drive) is listed.
+- **Zheng Yang** and **Angela Rao** — name and role only.
+- **Bailey Daymo's pronouns** — bio currently avoids them.
+- **Recruiting copy** in `#join` — written from the department's announcement, not approved
+  by Leah. Students may read it as policy.
+- **Google Scholar** — no profile found; ORCID and PubMed are linked instead.
+
+---
+
+## 5. Checks before you push
+
+No CI runs, so run these by hand.
+
+```bash
+# 1. tags balance (catches an unclosed div, which silently wrecks the layout)
+python3 - <<'PY'
+import html.parser
+class P(html.parser.HTMLParser):
+    def __init__(s): super().__init__(); s.stack=[]; s.bad=[]
+    def handle_starttag(s,t,a):
+        if t not in ('meta','link','img','br','hr','input','path','circle','line','source','rect'): s.stack.append(t)
+    def handle_endtag(s,t):
+        if s.stack and s.stack[-1]==t: s.stack.pop()
+        elif t in s.stack: s.bad.append(t)
+for f in ('index.html','people.html'):
+    p=P(); p.feed(open(f).read()); print(f, 'unclosed:', p.stack, 'mismatch:', p.bad)
+PY
+
+# 2. JS parses
+node --check assets/js/main.js
+
+# 3. no straight apostrophes left in prose
+grep -n "[a-zA-Z]'[a-zA-Z]" index.html people.html | grep -v '="'
+
+# 4. every outbound link resolves
+cat index.html people.html | grep -oE 'href="https?://[^"]+"' | sed 's/href="//;s/"$//' | sort -u |
+while read -r u; do
+  c=$(curl -sL -o /dev/null -w '%{http_code}' -A "Mozilla/5.0" --max-time 25 "$u")
+  case "$c" in 200|203|403|999) ;; *) echo "  $c  $u";; esac
+done
+```
+
+Expected noise in check 4: `403` from ACS / PNAS / ASM / doi.org / phys.org and `999` from
+LinkedIn are publisher bot-blocks and work fine in a browser. The two `fonts.googleapis.com`
+and `fonts.gstatic.com` 404s are `preconnect` origins, not navigable links.
+
+### Then look at it
+
+Tag-balance passing is not the same as looking right. Check, at minimum:
+
+- **375 px wide** and **~1280 px wide**, in **both themes**
+- open the mobile menu, and press Escape to close it
+- a publication row on a phone — the DOI link must be visible and tappable
+  (it used to be `display:none` under 720 px, which left every paper unclickable)
+- the nav logo at its real 26 px
+
+Screenshots of the Claude Code browser pane sometimes render stale or partially painted
+content, and JPEG compression puts blocky halos around saturated text. **Confirm anything
+suspicious with `preview_inspect` on computed styles rather than trusting the image.**
+
+---
+
+## 6. Bugs already found and fixed
+
+Listed so they don't get reintroduced:
+
+- **Wrong PubMed IDs** — 10 of 13 pointed at other people's papers. Now generated from NCBI.
+- **Publications unclickable on phones** — the hover-reveal DOI link was `display:none`
+  below 720 px. Now shown inline under the citation.
+- **Portraits rendered at full natural height** — with no author `height` rule, the
+  presentational `height=""` attribute beat `aspect-ratio` in the cascade, so a 900 px-tall
+  image sat in a 300 px column. `.portrait img` now sets `height: auto`.
+- **Mobile menu leaked while closed** — it relied on `transform` alone, and a vertically
+  centred link column overflows a short panel. Now also `visibility: hidden` and scrollable.
+- **Brand and theme toggle sat under the open menu** — both are raised above it now.
+- **Empty grid block on single-member groups** — the people grid used a shared-background
+  hairline grid, so empty cells showed as a grey slab. Now discrete bordered cards.
+- **Units read as exponents** — `3^g/L`. Stat units are baseline-aligned, not superscript.
+- **Heading levels skipped** — publication titles were `h4` directly under an `h2`; now `h3`.
+
+---
+
+## 7. Provenance
+
+Content is drawn from:
+
+- [Stanford Chemistry faculty page](https://chemistry.stanford.edu/people/leah-b-bushin)
+- [Department welcome announcement](https://chemistry.stanford.edu/news/stanford-welcomes-dr-leah-bushin-assistant-professor-chemistry) (bio, direct quotes)
+- [Scripps press release](https://scripps.ucsd.edu/news/scientists-produce-powerhouse-pigment-behind-octopus-camouflage) (xanthommatin quotes, yields, funders)
+- [*Nature Biotechnology* 2025](https://www.nature.com/articles/s41587-025-02867-7)
+- NCBI eutils (publication list), ORCID public API (verified iDs)
+- Member bios: Stanford Profiles, Sarafan ChEM-H, Berkeley Lab ABPDU, Mercer University news
+
+Leah's [ORCID](https://orcid.org/0000-0003-0538-2469) was confirmed against her Stanford
+affiliation and works list; member ORCIDs came from their Stanford Profiles pages and were
+checked against the ORCID API by name.
+
+---
+
+## 8. Picking this up with Claude Code
+
+```bash
+cd bushin-lab-website
+claude
+```
+
+Useful opening prompts:
+
+- *"Read the README, then regenerate the publications list from NCBI and add any new papers."*
+- *"Add <name> to people.html as a <role>. Search for their public profiles first and only
+  include what you can cite — leave the card minimal if you find nothing."*
+- *"Run the checks in README section 5, then screenshot index.html and people.html at 375 px
+  and 1280 px in both themes and tell me what looks wrong."*
+
+Two things worth telling any agent explicitly, because both were learned the hard way here:
+
+1. **Look up identifiers; never recall them.** DOIs, PubMed IDs, ORCIDs, and URLs must come
+   from an API or a fetched page in the same session.
+2. **Verify rendering with computed styles, not screenshots.** The pane's images can be
+   stale, clipped, or compression-artifacted.
+
+When committing, note that `git commit -m` in zsh will silently eat backticked words — use
+`git commit -F-` with a heredoc for multi-line messages.
