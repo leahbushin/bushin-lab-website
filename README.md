@@ -1,12 +1,24 @@
 # Bushin Lab — website
 
-Website for the [Bushin Lab](https://yeatmanlab.github.io/bushin-lab-website/), Department of
+Website for the [Bushin Lab](https://leahbushin.github.io/bushinlab-website/), Department of
 Chemistry, Stanford University. PI: **Leah B. Bushin**, Assistant Professor of Chemistry.
 
-- **Live:** <https://yeatmanlab.github.io/bushin-lab-website/>
-- **Repo:** <https://github.com/yeatmanlab/bushin-lab-website>
+- **Live:** <https://leahbushin.github.io/bushinlab-website/>
+- **Repo:** <https://github.com/leahbushin/bushinlab-website>
 - **Deploy:** GitHub Pages, `main` branch, root path. Push to `main` and it goes live in
   30–90 seconds. There is no CI, no build step, and no staging branch.
+
+> **First-time Pages setup.** The repo starts private, and GitHub Pages needs either a public
+> repo or a paid plan. Repo **admin** must, in Settings:
+> 1. **General → Danger Zone → Change visibility → Public**
+> 2. **Pages → Build and deployment → Source: Deploy from a branch → `main` / `/ (root)` → Save**
+>
+> The site appears at <https://leahbushin.github.io/bushinlab-website/> within a couple of
+> minutes. Every canonical URL, `og:` tag and the JSON-LD block already point there. If the
+> repo is ever renamed, or a custom domain is added, update those — `grep -rn "leahbushin.github.io"`.
+>
+> This repository was moved from `yeatmanlab/bushin-lab-website` with its full commit history
+> intact; that copy is the origin of commits `66d1cbe`–`957e8f1`.
 
 ---
 
