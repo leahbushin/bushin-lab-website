@@ -1,10 +1,10 @@
 # Bushin Lab — website
 
-Website for the [Bushin Lab](https://leahbushin.github.io/bushinlab-website2/), Department of
+Website for the [Bushin Lab](https://leahbushin.github.io/bushin-lab-website/), Department of
 Chemistry, Stanford University. PI: **Leah B. Bushin**, Assistant Professor of Chemistry.
 
-- **Live:** <https://leahbushin.github.io/bushinlab-website2/>
-- **Repo:** <https://github.com/leahbushin/bushinlab-website2>
+- **Live:** <https://leahbushin.github.io/bushin-lab-website/>
+- **Repo:** <https://github.com/leahbushin/bushin-lab-website>
 - **Deploy:** GitHub Pages, `main` branch, root path. Push to `main` and it goes live in
   30–90 seconds. There is no CI, no build step, and no staging branch.
 
@@ -19,7 +19,7 @@ Chemistry, Stanford University. PI: **Leah B. Bushin**, Assistant Professor of C
 > because there is no build step — GitHub serves these files exactly as committed, and every
 > push to `main` republishes automatically.
 >
-> The site then appears at <https://leahbushin.github.io/bushinlab-website2/>. Every canonical
+> The site then appears at <https://leahbushin.github.io/bushin-lab-website/>. Every canonical
 > URL, `og:` tag and the JSON-LD block already point there. If the repo is renamed or a custom
 > domain is added, update them — `grep -rn "leahbushin.github.io"`.
 >
