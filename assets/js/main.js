@@ -313,4 +313,17 @@
     });
   }
 
+  /* -------------------------------------------------------- last updated
+     document.lastModified reflects the Last-Modified header GitHub Pages
+     sends for this file, i.e. the most recent deploy. The markup carries a
+     hardcoded fallback for the no-JS case.                              */
+  var upd = document.getElementById('updated');
+  if (upd) {
+    var lm = new Date(document.lastModified);
+    if (!isNaN(lm.getTime())) {
+      upd.textContent = 'Last updated ' +
+        lm.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    }
+  }
+
 })();
