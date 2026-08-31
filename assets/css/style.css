@@ -183,8 +183,8 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
   letter-spacing: -.03em;
   max-width: 17ch;
 }
-.hero h1 .line { display: block; overflow: hidden; }
-.hero h1 .line > span { display: block; transform: translateY(105%); animation: rise 1.05s var(--ease) forwards; }
+.hero h1 .line { display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em; }
+.hero h1 .line > span { display: block; transform: translateY(120%); animation: rise 1.05s var(--ease) forwards; }
 .hero h1 .line:nth-child(2) > span { animation-delay: .09s; }
 .hero h1 .line:nth-child(3) > span { animation-delay: .18s; }
 .hero h1 .line:nth-child(4) > span { animation-delay: .27s; }
@@ -248,15 +248,6 @@ em.hl { font-style: normal; background: var(--grad); -webkit-background-clip: te
 .side-note { border-left: 1px solid var(--line); padding-left: 1.6rem; }
 .side-note p + p { margin-top: 1rem; }
 .side-note p { color: var(--fg-muted); font-size: .98rem; }
-
-/* ---------- stats ---------- */
-.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-top: 4rem; }
-@media (min-width: 780px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-.stat { background: var(--bg); padding: 1.75rem 1.4rem; transition: background .3s; }
-.stat:hover { background: var(--bg-elev); }
-.stat b { display: block; font-family: var(--ff-display); font-size: clamp(2.1rem, 4vw, 3rem); line-height: 1; letter-spacing: -.03em; }
-.stat b .u { font-size: .42em; color: var(--accent); vertical-align: baseline; margin-left: .12em; letter-spacing: .02em; }
-.stat small { display: block; margin-top: .6rem; font-family: var(--ff-mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--fg-dim); line-height: 1.5; }
 
 /* ---------- research cards ---------- */
 .cards { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-top: 3.5rem; }

@@ -99,28 +99,6 @@
     });
   });
 
-  /* ------------------------------------------------------ stat counters */
-  var stats = [].slice.call(document.querySelectorAll('[data-count]'));
-  if (stats.length && 'IntersectionObserver' in window) {
-    var cio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        var el = e.target, target = parseFloat(el.dataset.count), t0 = null;
-        if (reduced) { el.firstChild.nodeValue = target; cio.unobserve(el); return; }
-        function step(ts) {
-          if (!t0) t0 = ts;
-          var p = Math.min((ts - t0) / 1100, 1);
-          var v = Math.round(target * (1 - Math.pow(1 - p, 3)));
-          el.firstChild.nodeValue = v;
-          if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-        cio.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    stats.forEach(function (s) { cio.observe(s); });
-  }
-
   /* ----------------------------------------------- publication filters */
   var chips = [].slice.call(document.querySelectorAll('.chip[data-filter]'));
   var pubs = [].slice.call(document.querySelectorAll('.pub'));
